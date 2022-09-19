@@ -3,39 +3,60 @@ var todayHour = moment().format("hha");
 $('#currentDay').text(today);
 
 
-
+var fiveAmTxt = moment().hour("5").format("hha"); 
+var sixAmTxt = moment().hour("6").format("hha");
+var sevenAmTxt = moment().hour("7").format("hha");
+var eightAmTxt = moment().hour("8").format("hha");
+var nineAmTxt = moment().hour("9").format("hha");
+var ninePmTxt = moment().hour("21").format("hha");
 
 // Set the hours for the time column
 // .hour lets you get or set the hour
-$('#h4Txt').text(moment().hour("0").format("hha"));
-$('#h6Txt').text(moment().hour("3").format("hha"));
-$('#h7Txt').text(moment().hour("13").format("hha"));
-$('#h5Txt').text(moment().hour("1").format("hha"));
+$('#h5Txt').text(fiveAmTxt);
+$('#h6Txt').text(sixAmTxt);
+$('#h7Txt').text(sevenAmTxt);
+$('#h8Txt').text(eightAmTxt);
 // This could be made into a loop
 
-var fiveAmTxt = moment().hour("2").format("hha"); 
+// CHALLENGE
+// var h = i+5
+// $('#h'+i+'Txt').text.moment().hour(h).format("hha")
+// Use traverse DOM with input-group-text
 
-var todayHour2 = moment().hour("4").format("hha"); 
-console.log("Today's Date: " + today)
+// BUILD TEST
 console.log("Current Hour: " + todayHour)
 
 
-console.log("Block Hour: " + fiveAmTxt)
 function hour () {
-    console.log("Timer Test")
-    if (todayHour2 < fiveAmTxt) {
-        console.log("The time has passed")
-    } else if (todayHour2 == fiveAmTxt) {
+    if (todayHour > fiveAmTxt) {
+        console.log("5a: The time has passed")
+    } else if (todayHour == fiveAmTxt) {
         console.log("It's the current hour")
     } else {
         console.log("The time is in the future")
     }
-    return;
+
+    if (todayHour > sevenAmTxt) {
+        console.log("The time has passed")
+    } else if (todayHour == sevenAmTxt) {
+        console.log("Current: It's the current hour")
+    } else {
+        console.log("The time is in the future")
+    }
+
+    if (todayHour > ninePmTxt) {
+        console.log("The time has passed")
+    } else if (todayHour == ninePmTxt) {
+        console.log("It's the current hour")
+    } else {
+        console.log("9p: The time is in the future")
+    }
 };
 
 // Execute every 5 minutes
 // setInterval(hour, 1000)
 hour()
+
 
 function testLocalStorageRecall() {
     var testRecall = localStorage.getItem("testLocal")
