@@ -2,13 +2,24 @@ var today = moment().format("dddd, MMMM Do");
 var todayHour = moment().format("hha");
 $('#currentDay').text(today);
 
-
-var fiveAmTxt = moment().hour("5").format("ha"); 
-var sixAmTxt = moment().hour("6").format("ha");
-var sevenAmTxt = moment().hour("7").format("ha");
-var eightAmTxt = moment().hour("8").format("ha");
-var nineAmTxt = moment().hour("9").format("ha");
-var ninePmTxt = moment().hour("21").format("ha");
+// Time stamps for logic to determine if the time block is past, present, or future
+var fiveAmTxt = moment().hour("5").format("h a"); 
+var sixAmTxt = moment().hour("6").format("h a");
+var sevenAmTxt = moment().hour("7").format("h a");
+var eightAmTxt = moment().hour("8").format("h a");
+var nineAmTxt = moment().hour("9").format("h a");
+var tenAmTxt = moment().hour("10").format("h a");
+var elevenAmTxt = moment().hour("11").format("h a");
+var twelvePmTxt = moment().hour("12").format("h a");
+var onePmTxt = moment().hour("13").format("h a");
+var twoPmTxt = moment().hour("14").format("h a");
+var threePmTxt = moment().hour("15").format("h a");
+var fourPmTxt = moment().hour("16").format("h a");
+var fivePmTxt = moment().hour("17").format("h a");
+var sixPmTxt = moment().hour("18").format("h a");
+var sevenPmTxt = moment().hour("19").format("h a");
+var eightPmTxt = moment().hour("20").format("h a");
+var ninePmTxt = moment().hour("21").format("h a");
 // NOTE: Using format("hha") compared the hour as the number
 // At 11am, todayHour = 11am. ninePmTxt.format('hha')=9pm
 // todayHour > ninePmTxt 
@@ -19,8 +30,15 @@ var ninePmTxt = moment().hour("21").format("ha");
 // .hour lets you get or set the hour
 $('#h5Txt').text(fiveAmTxt);
 $('#h6Txt').text(sixAmTxt);
-$('#h7Txt').text(sevenAmTxt);
+$('#h7Txt').text(onePmTxt);
 $('#h8Txt').text(eightAmTxt);
+$('#h9Txt').text(nineAmTxt);
+$('#h10Txt').text(tenAmTxt);
+$('#h11Txt').text(elevenAmTxt);
+$('#h12Txt').text(twelvePmTxt);
+$('#h13Txt').text(onePmTxt);
+$('#h14Txt').text(twoPmTxt);
+$('#h15Txt').text(threePmTxt);
 // This could be made into a loop
 
 // CHALLENGE

@@ -30,6 +30,10 @@ textarea {
   border-radius: 15px;
 }
 
+.input-group-text {
+  width: 4.5rem;
+}
+
 .row {
   white-space: pre-wrap;
   height: 80px;
