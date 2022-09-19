@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -33,25 +33,48 @@
     <div class="container">
       <!-- Timeblocks go here -->
       
+      <form>
+        <div class="input-group">
+          <input type="text" name="test" id="test">
+          <button id="test-button">test button</button>
+        </div>
+      </form>
+
+
       <table class="table table-bordered">
         <tbody>
 
-          <tr>
           <!--- Bootstrap --->
-          <div class="input-group">
-            <span class="input-group-text">5am</span>
-            <textarea class="form-control" aria-label="With textarea" name="5amSchedule"></textarea>
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Delete</button>
-          </div>
+          <tr>
+            <form>
+              <div class="input-group">
+                <span class="input-group-text" id="5amTxt"></span>
+                <textarea class="form-control" aria-label="With textarea" id="5am" name="5am"></textarea>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2-5am">Delete</button>
+              </div>
+            </form>
           </tr>
-
+           
           <tr>
             <div class="input-group">
-              <span class="input-group-text">6am</span>
-              <textarea class="form-control" aria-label="With textarea"></textarea>
+              <span class="input-group-text" id="6amTxt"></span>
+              <textarea class="form-control" aria-label="With textarea" name="7amSchedule"></textarea>
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">Delete</button>
             </div>
-            </tr>
+          </tr>
+
+
+          <tr>
+            <form>
+              <div class="input-group">
+                <span class="input-group-text" id="7amTxt"></span>
+                <input type="text" class="form-input" id="6am" name="6am"/>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Delete</button>
+              </div>
+            </form>
+          </tr>
+          
+       
 
         </tbody>
       </table>
@@ -62,8 +85,9 @@
      
 
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--- Changed from 3.2.1 to 3.5.1 --->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
