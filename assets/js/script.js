@@ -1,6 +1,8 @@
 var today = moment().format("dddd, MMMM Do");
-var todayHour = moment().format("ha");
+var todayHour = moment().format("h a");
 $('#currentDay').text(today);
+
+LocalStorageRecall(); 
 
 // Time stamps for logic to determine if the time block is past, present, or future
 var fiveAmTxt = moment().hour("5").format("h a"); 
@@ -49,7 +51,8 @@ $('#h15Txt').text(threePmTxt);
 
 // BUILD TEST
 console.log("Current Hour: " + todayHour)
-console.log("ninePMTxt: " + ninePmTxt); 
+console.log('twoPmTxt: ' + twoPmTxt);
+console.log("ninePmTxt: " + ninePmTxt);
 console.log(todayHour > ninePmTxt);
 console.log(todayHour == ninePmTxt); 
 
@@ -79,6 +82,8 @@ function hour () {
     //     $('#h-5-form').children().children().eq(1).removeClass("past").removeClass("present").addClass("future");
     // }
 
+    // past: grey
+    // current: red
     // future: green
     
     // Is the time in the past? 
@@ -134,21 +139,6 @@ setInterval(hour, 300000);
 
 
 
-/// ----- Local Storage Recall ------
-function LocalStorageRecall() {
-    var testRecall = localStorage.getItem("testLocal")
-    console.log("Prior Value Recall: " + testRecall)
-    console.log(typeof testRecall) // string
-    // How can you pass the value back into the empty form? 
-    // $('#test-form').text(testRecall)
-    $('#test').text(testRecall);
-
-    var h14Recall = localStorage.getItem("h14Local")
-    console.log("h14Value Recall: " + h14Recall)
-}
-
-LocalStorageRecall(); 
-
 // var test = $('#test').val();
 var test = $('input[name="test"]'); 
 var testBtn = $('#test-form'); 
@@ -163,45 +153,61 @@ testBtn.on('submit', testSubmit);
 
 
 // h-14-form
-var h14Value = $('input[name="h-14-value"]'); 
 var h14Btn = $('#h-14-form'); 
 
 // h-14 Submit
 function h14Submit(event) {
     event.preventDefault();
+    var h14Value = $('input[name="h-14-value"]'); 
     console.log("h14Submit: " + h14Value.val());
     localStorage.setItem("h14Local",h14Value.val());
+    // console.log("h14Submit: " + h14Local);
 }
 
 h14Btn.on('submit', h14Submit);
 
+// h-15-form
+var h15Value = $('input[name="h-15-value"]'); 
+var h15Btn = $('#h-15-form'); 
 
-
-
-// CLICK CODE 1
-// Calls function to locally store data if the
-$("#h-5").click(function(event) {
-    event.stopPropagation();
-    locallyStoreData();
-// ISSUE: Propgation not stopping. 
-})
-
-// CLICK CODE 2
-// $("body").on('click', locallyStoreData); 
-// 05-Third Party APIs > 28-Stu Mini Project > Lines 108-110
-
-
-
-function deleteText(event) {
-    console.log("delete test")
+// h-15 Submit
+function h15Submit(event) {
     event.preventDefault();
-    // Clear text
-    // ISSUE: Does not clear the text
-    $('input[name="5am"').val('');
-    // Clear local storage
+    console.log("h15Submit: " + h15Value.val());
+    localStorage.setItem("h15Local",h15Value.val());
 }
 
-fiveAmDelete.on('click', deleteText); 
+h15Btn.on('submit', h15Submit);
 
-// // Delete the data
-// dailyActivityClear.on('click,' deleteText);
+
+/// ----- Local Storage Recall ------
+function LocalStorageRecall() {
+    // Test Local Storage Recall
+    var testRecall = localStorage.getItem("testLocal")
+    console.log("Test Recall: " + testRecall)
+    console.log(typeof testRecall) // string
+    $('#test-form').children().children().eq(1).attr('value', testRecall);
+
+    // h-14 Local Storage Recall
+    var h14Recall = localStorage.getItem("h14Local")
+    console.log("h14Value Recall: " + h14Recall)
+    $('#h-14-form').children().children().eq(1).attr('value', h14Recall);
+    // $('#h-14-form').children().children().eq(1).text("value=" + h14Recall); 
+
+    // h-15 Local Storage Recall
+    var h15Recall = localStorage.getItem("h15Local")
+    console.log("h15Value Recall: " + h15Recall)
+    $('#h-15-form').children().children().eq(1).attr('value', h15Recall);
+
+
+    // $("#h-15-form") 
+    // $('#test').text(testRecall);
+    // $('#test3').text(testRecall);
+    // $('#textarea').children().children().eq(0).attr("value", h14Recall); 
+    // $('#textarea').children().children().eq(0).attr("value", h14Recall); 
+}
+
+// $("#button").on('click', localStorage.clear())
+
+
+
