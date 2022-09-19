@@ -3,12 +3,17 @@ var todayHour = moment().format("hha");
 $('#currentDay').text(today);
 
 
-var fiveAmTxt = moment().hour("5").format("hha"); 
-var sixAmTxt = moment().hour("6").format("hha");
-var sevenAmTxt = moment().hour("7").format("hha");
-var eightAmTxt = moment().hour("8").format("hha");
-var nineAmTxt = moment().hour("9").format("hha");
-var ninePmTxt = moment().hour("21").format("hha");
+var fiveAmTxt = moment().hour("5").format("ha"); 
+var sixAmTxt = moment().hour("6").format("ha");
+var sevenAmTxt = moment().hour("7").format("ha");
+var eightAmTxt = moment().hour("8").format("ha");
+var nineAmTxt = moment().hour("9").format("ha");
+var ninePmTxt = moment().hour("21").format("ha");
+// NOTE: Using format("hha") compared the hour as the number
+// At 11am, todayHour = 11am. ninePmTxt.format('hha')=9pm
+// todayHour > ninePmTxt 
+// 11 > 9 --> TRUE. The time has passed. 
+// Want 11 > 21 --> FALSE. 
 
 // Set the hours for the time column
 // .hour lets you get or set the hour
@@ -25,15 +30,38 @@ $('#h8Txt').text(eightAmTxt);
 
 // BUILD TEST
 console.log("Current Hour: " + todayHour)
+console.log("ninePMTxt: " + ninePmTxt); 
+console.log(todayHour > ninePmTxt);
+console.log(todayHour == ninePmTxt); 
 
+
+$('.container').children().eq(1).addClass("trial1");
+$('.container').children().eq(1).children().eq(0).addClass("trial2");
+$('.container').children().eq(2).children().children().eq(1).addClass("trial3").removeClass("trial3a");
+$('.container').children().children().children(0).eq(1).addClass("trial4");
+$('.container').children().children().children(0).eq(1).removeClass("trial5");
+console.log($('.container').children().eq(2).children().children().eq(1)); 
+
+$('#h-6-form').children().eq(0).addClass("triala");
+$('#h-6-form').children().children().eq(1).addClass("trialb");
+
+// $('#h-6-form').children().children().eq(1).addClass("triala");
+
+// $('#h-6-form').children().children().eq(1).addclass("past");
 
 function hour () {
-    if (todayHour > fiveAmTxt) {
-        console.log("5a: The time has passed")
-    } else if (todayHour == fiveAmTxt) {
-        console.log("It's the current hour")
+    // Is the time in the past? 
+    if (todayHour > ninePmTxt) {
+        console.log("1: The time has passed")
+        $('#h-6-form').children().children().eq(1).addClass("past").removeClass("present").removeClass("future");
+    // Is it the current time? 
+    } else if (todayHour == ninePmTxt) {
+        console.log("1: It's the current hour")
+        $('#h-6-form').children().children().eq(1).removeClass("past").addClass("present").removeClass("future");
+    // Is the time in the future? 
     } else {
-        console.log("The time is in the future")
+        console.log("1: The time is in the future")
+        $('#h-6-form').children().children().eq(1).removeClass("past").removeClass("present").addClass("future");
     }
 
     if (todayHour > sevenAmTxt) {
