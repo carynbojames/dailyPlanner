@@ -1,25 +1,30 @@
 var today = moment().format("dddd, MMMM Do");
 var todayHour = moment().format("hha");
 $('#currentDay').text(today);
-console.log(todayHour.val());
 
-// var fiveAmTxt = moment().hour("5", "hh-mm").format("ka");
-$('#5amTxt').text(moment().hour("5", "hh-mm").format("hha"));
-$('#6amTxt').text(moment().hour("6", "hh-mm").format("hha"));
-$('#7amTxt').text(moment().hour("12", "hh-mm").format("hha"));
+// Set the hours for the time column
+// .hour lets you get or set the hour
+console.log(moment().format("hha"));
+var fiveAmTxt = $('#h4Txt').text(moment().hour("8").format("hha"));
+var fiveAmTxt = $('#h5Txt').text(moment().hour("8").format("hha"));
+var sixAmTxt = $('#h6Txt').text(moment().hour("6").format("hha"));
+var sevenAmTxt = $('#h7Txt').text(moment().hour("13").format("hha"));
+
+
 
 
 
 // var test = $('#test').val();
-// var test = $('input[name="test"]'); 
-// var testBtn = $('#test-button'); 
+var test = $('input[name="test"]'); 
+var testBtn = $('#test-form'); 
 
-// function testSubmit(event) {
-//     event.preventDefault();
-//     console.log(test.val());
-// }
+function testSubmit(event) {
+    event.preventDefault();
+    console.log(test.val());
+    // $('input[name="test"]').val("");
+}
 
-// testBtn.on('submit', testSubmit);
+testBtn.on('submit', testSubmit);
 
 // var fiveAmSchedule = $("#id").val();
 var fiveAmSchedule = $('input[name="5am"]').val();
@@ -32,7 +37,7 @@ var fiveAmDelete = $('#button-addon2-5am');
 function locallyStoreData() {
     console.log("hello");
     // Console log value
-    // console.log(fiveAmSchedule);
+    console.log(fiveAmSchedule);
     // console.log(sixAmSchedule); 
     // Local Storage
     // localStorage.setItem("5amSch", fiveAmSchedule.val); 
@@ -40,7 +45,7 @@ function locallyStoreData() {
 
 // CLICK CODE 1
 // Calls function to locally store data if the
-$("body").click(function(event) {
+$("#h-5").click(function(event) {
     event.stopPropagation();
     locallyStoreData();
 // ISSUE: Propgation not stopping. 

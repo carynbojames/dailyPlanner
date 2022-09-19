@@ -33,10 +33,16 @@
     <div class="container">
       <!-- Timeblocks go here -->
       
-      <form>
+      <form id="test-form">
         <div class="input-group">
-          <input type="text" name="test" id="test">
-          <button id="test-button">test button</button>
+          <span class="input-group-text" id="h4Txt"></span>
+          <input type="text" class="form-control" name="test" id="test">
+          <!-- <button id="test-add-button">Add</button> 
+          <button id="test-delete-button">Delete</button> -->
+          <button class="btn btn-outline-secondary">Add</button>
+          <button class="btn btn-outline-secondary">Delete</button>
+
+          <!-- Both of the buttons do the same console log -->
         </div>
       </form>
 
@@ -46,10 +52,10 @@
 
           <!--- Bootstrap --->
           <tr>
-            <form>
+            <form id="h-5">
               <div class="input-group">
-                <span class="input-group-text" id="5amTxt"></span>
-                <textarea class="form-control" aria-label="With textarea" id="5am" name="5am"></textarea>
+                <span class="input-group-text" id="h5Txt"></span>
+                <textarea class="form-group" aria-label="With textarea" id="5am" name="5am"></textarea>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2-5am">Delete</button>
               </div>
             </form>
@@ -57,7 +63,7 @@
            
           <tr>
             <div class="input-group">
-              <span class="input-group-text" id="6amTxt"></span>
+              <span class="input-group-text" id="h6Txt"></span>
               <textarea class="form-control" aria-label="With textarea" name="7amSchedule"></textarea>
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">Delete</button>
             </div>
@@ -67,7 +73,7 @@
           <tr>
             <form>
               <div class="input-group">
-                <span class="input-group-text" id="7amTxt"></span>
+                <span class="input-group-text" id="h7Txt"></span>
                 <input type="text" class="form-input" id="6am" name="6am"/>
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2">Delete</button>
               </div>
