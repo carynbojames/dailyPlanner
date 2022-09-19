@@ -1,5 +1,5 @@
 var today = moment().format("dddd, MMMM Do");
-var todayHour = moment().format("hha");
+var todayHour = moment().format("ha");
 $('#currentDay').text(today);
 
 // Time stamps for logic to determine if the time block is past, present, or future
@@ -30,7 +30,7 @@ var ninePmTxt = moment().hour("21").format("h a");
 // .hour lets you get or set the hour
 $('#h5Txt').text(fiveAmTxt);
 $('#h6Txt').text(sixAmTxt);
-$('#h7Txt').text(onePmTxt);
+$('#h7Txt').text(sevenAmTxt);
 $('#h8Txt').text(eightAmTxt);
 $('#h9Txt').text(nineAmTxt);
 $('#h10Txt').text(tenAmTxt);
@@ -40,6 +40,7 @@ $('#h13Txt').text(onePmTxt);
 $('#h14Txt').text(twoPmTxt);
 $('#h15Txt').text(threePmTxt);
 // This could be made into a loop
+// May delete this so I'm not worried about formatting and I can get the formula to work
 
 // CHALLENGE
 // var h = i+5
@@ -52,42 +53,68 @@ console.log("ninePMTxt: " + ninePmTxt);
 console.log(todayHour > ninePmTxt);
 console.log(todayHour == ninePmTxt); 
 
+// $('.container').children().eq(1).addClass("trial1");
+// $('.container').children().eq(1).children().eq(0).addClass("trial2");
+// $('.container').children().eq(2).children().children().eq(1).addClass("trial3").removeClass("trial3a");
+// $('.container').children().children().children(0).eq(1).addClass("trial4");
+// $('.container').children().children().children(0).eq(1).removeClass("trial5");
+// console.log($('.container').children().eq(2).children().children().eq(1)); 
 
-$('.container').children().eq(1).addClass("trial1");
-$('.container').children().eq(1).children().eq(0).addClass("trial2");
-$('.container').children().eq(2).children().children().eq(1).addClass("trial3").removeClass("trial3a");
-$('.container').children().children().children(0).eq(1).addClass("trial4");
-$('.container').children().children().children(0).eq(1).removeClass("trial5");
-console.log($('.container').children().eq(2).children().children().eq(1)); 
+// $('#h-6-form').children().eq(0).addClass("triala");
+// $('#h-6-form').children().children().eq(1).addClass("trialb");
 
-$('#h-6-form').children().eq(0).addClass("triala");
-$('#h-6-form').children().children().eq(1).addClass("trialb");
-
-// $('#h-6-form').children().children().eq(1).addClass("triala");
-
-// $('#h-6-form').children().children().eq(1).addclass("past");
 
 function hour () {
+    // // Is the time in the past? 
+    // if (todayHour > fiveAmTxt) {
+    //     console.log("5: The time has passed")
+    //     $('#h-5-form').children().children().eq(1).addClass("past").removeClass("present").removeClass("future");
+    // // Is it the current time? 
+    // } else if (todayHour == fiveAmTxt) {
+    //     console.log("5: It's the current hour")
+    //     $('#h-5-form').children().children().eq(1).removeClass("past").addClass("present").removeClass("future");
+    // // Is the time in the future? 
+    // } else {
+    //     console.log("5: The time is in the future")
+    //     $('#h-5-form').children().children().eq(1).removeClass("past").removeClass("present").addClass("future");
+    // }
+
+    // future: green
+    
     // Is the time in the past? 
-    if (todayHour > ninePmTxt) {
-        console.log("1: The time has passed")
+    if (todayHour > sixAmTxt) {
+        console.log("6: The time has passed")
         $('#h-6-form').children().children().eq(1).addClass("past").removeClass("present").removeClass("future");
     // Is it the current time? 
-    } else if (todayHour == ninePmTxt) {
-        console.log("1: It's the current hour")
+    } else if (todayHour == sixAmTxt) {
+        console.log("6: It's the current hour")
         $('#h-6-form').children().children().eq(1).removeClass("past").addClass("present").removeClass("future");
     // Is the time in the future? 
     } else {
-        console.log("1: The time is in the future")
+        console.log("6: The time is in the future")
         $('#h-6-form').children().children().eq(1).removeClass("past").removeClass("present").addClass("future");
     }
 
     if (todayHour > sevenAmTxt) {
-        console.log("The time has passed")
+        console.log("7: The time has passed")
+        $('#h-7-form').children().children().eq(1).addClass("past").removeClass("present").removeClass("future");
     } else if (todayHour == sevenAmTxt) {
-        console.log("Current: It's the current hour")
+        console.log("7: It's the current hour")
+        $('#h-7-form').children().children().eq(1).removeClass("past").addClass("present").removeClass("future");
     } else {
-        console.log("The time is in the future")
+        console.log("7: The time is in the future")
+        $('#h-7-form').children().children().eq(1).removeClass("past").removeClass("present").addClass("future");
+    }
+
+    if (todayHour > twoPmTxt) {
+        console.log("14: The time has passed")
+        $('#h-14-form').children().children().eq(1).addClass("past").removeClass("present").removeClass("future");
+    } else if (todayHour == twoPmTxt) {
+        console.log("14: It's the current hour")
+        $('#h-14-form').children().children().eq(1).removeClass("past").addClass("present").removeClass("future");
+    } else {
+        console.log("14: The time is in the future")
+        $('#h-14-form').children().children().eq(1).removeClass("past").removeClass("present").addClass("future");
     }
 
     if (todayHour > ninePmTxt) {
@@ -95,23 +122,32 @@ function hour () {
     } else if (todayHour == ninePmTxt) {
         console.log("It's the current hour")
     } else {
-        console.log("9p: The time is in the future")
+        console.log("The time is in the future")
     }
 };
 
+// Execute upon loading
+hour();
 // Execute every 5 minutes
-// setInterval(hour, 1000)
-hour()
+setInterval(hour, 300000);
 
 
-function testLocalStorageRecall() {
+
+
+/// ----- Local Storage Recall ------
+function LocalStorageRecall() {
     var testRecall = localStorage.getItem("testLocal")
-    console.log("Prior Value: " + testRecall)
+    console.log("Prior Value Recall: " + testRecall)
+    console.log(typeof testRecall) // string
     // How can you pass the value back into the empty form? 
     // $('#test-form').text(testRecall)
+    $('#test').text(testRecall);
+
+    var h14Recall = localStorage.getItem("h14Local")
+    console.log("h14Value Recall: " + h14Recall)
 }
 
-testLocalStorageRecall(); 
+LocalStorageRecall(); 
 
 // var test = $('#test').val();
 var test = $('input[name="test"]'); 
@@ -119,30 +155,28 @@ var testBtn = $('#test-form');
 
 function testSubmit(event) {
     event.preventDefault();
-    console.log(test.val());
+    console.log("testSubmit: " + test.val());
     localStorage.setItem("testLocal",test.val());
 }
 
 testBtn.on('submit', testSubmit);
 
 
+// h-14-form
+var h14Value = $('input[name="h-14-value"]'); 
+var h14Btn = $('#h-14-form'); 
 
-// var fiveAmSchedule = $("#id").val();
-var fiveAmSchedule = $('input[name="5am"]').val();
-var sixAmSchedule = $('input[name=6am]').val();
-var sixAmSchedule = $('#6am').val();
-
-
-var fiveAmDelete = $('#button-addon2-5am');
-
-function locallyStoreData() {
-    console.log("hello");
-    // Console log value
-    console.log(fiveAmSchedule);
-    // console.log(sixAmSchedule); 
-    // Local Storage
-    // localStorage.setItem("5amSch", fiveAmSchedule.val); 
+// h-14 Submit
+function h14Submit(event) {
+    event.preventDefault();
+    console.log("h14Submit: " + h14Value.val());
+    localStorage.setItem("h14Local",h14Value.val());
 }
+
+h14Btn.on('submit', h14Submit);
+
+
+
 
 // CLICK CODE 1
 // Calls function to locally store data if the
