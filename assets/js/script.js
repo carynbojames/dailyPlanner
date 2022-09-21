@@ -432,7 +432,8 @@ function LocalStorageRecall() {
     // $('#textarea').children().children().eq(0).attr("value", h14Recall); 
 }
 
-// $("#button").on('click', localStorage.clear())
+
+
 
 
 // 1a. HTML create a primary button in HTML
@@ -473,3 +474,10 @@ function LocalStorageRecall() {
 // }
 // console.log(recallLi); 
 // console.log(typeof recallLi); // object
+
+// $("#clear").on('click', clear())
+
+// function clear() {
+//     localStorage.clear()
+    
+// }
