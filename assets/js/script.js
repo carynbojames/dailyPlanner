@@ -23,19 +23,13 @@ var sevenPmTxt = moment().hour("19").format("HH");
 var eightPmTxt = moment().hour("20").format("HH");
 var ninePmTxt = moment().hour("21").format("HH");
 
-// CHALLENGE
-// var h = i+5
-// $('#h'+i+'Txt').text.moment().hour(h).format("hha")
-// Use traverse DOM with input-group-text
 
-// BUILD TEST
-console.log("Current Hour: " + todayHour)
-console.log('twoPmTxt: ' + twoPmTxt);
-console.log("ninePmTxt: " + ninePmTxt);
-console.log(todayHour > ninePmTxt);
-console.log(todayHour == ninePmTxt); 
-
-// $('.container').children().eq(1).addClass("trial1");
+// // BUILD TEST
+// console.log("Current Hour: " + todayHour)
+// console.log('twoPmTxt: ' + twoPmTxt);
+// console.log("ninePmTxt: " + ninePmTxt);
+// console.log(todayHour > ninePmTxt);
+// console.log(todayHour == ninePmTxt); 
 // $('.container').children().eq(1).children().eq(0).addClass("trial2");
 // $('.container').children().eq(2).children().children().eq(1).addClass("trial3").removeClass("trial3a");
 // $('.container').children().children().children(0).eq(1).addClass("trial4");
@@ -197,6 +191,113 @@ function testSubmit(event) {
 
 testBtn.on('submit', testSubmit);
 
+// h-5-form
+var h5Value = $('input[name="h-5-value"]');
+var h5Btn = $('#h-5-form'); 
+
+// h-5 Submit
+function h5Submit(event) {
+    event.preventDefault(); 
+    localStorage.setItem("h5Local",h5Value.val());
+}
+
+h5Btn.on('submit', h5Submit);
+
+// h-6-form
+var h6Value = $('input[name="h-6-value"]');
+var h6Btn = $('#h-6-form'); 
+
+// h-6 Submit
+function h6Submit(event) {
+    event.preventDefault(); 
+    localStorage.setItem("h6Local",h6Value.val());
+}
+
+h6Btn.on('submit', h6Submit);
+
+// h-7-form
+var h7Value = $('input[name="h-7-value"]');
+var h7Btn = $('#h-7-form'); 
+
+// h-7 Submit
+function h7Submit(event) {
+    event.preventDefault(); 
+    localStorage.setItem("h7Local",h7Value.val());
+}
+
+h7Btn.on('submit', h7Submit);
+
+// h-8-form
+var h8Value = $('input[name="h-8-value"]');
+var h8Btn = $('#h-8-form'); 
+
+// h-8 Submit
+function h8Submit(event) {
+    event.preventDefault(); 
+    localStorage.setItem("h8Local",h8Value.val());
+}
+
+h8Btn.on('submit', h8Submit);
+
+// h-9-form
+var h9Value = $('input[name="h-9-value"]');
+var h9Btn = $('#h-9-form'); 
+
+// h-9 Submit
+function h9Submit(event) {
+    event.preventDefault(); 
+    localStorage.setItem("h9Local",h9Value.val());
+}
+
+h9Btn.on('submit', h9Submit);
+
+// h-10-form
+var h10Value = $('input[name="h-10-value"]');
+var h10Btn = $('#h-10-form'); 
+
+// h-10 Submit
+function h10Submit(event) {
+    event.preventDefault(); 
+    localStorage.setItem("h10Local",h10Value.val());
+}
+
+h10Btn.on('submit', h10Submit);
+
+// h-11-form
+var h11Value = $('input[name="h-11-value"]');
+var h11Btn = $('#h-11-form'); 
+
+// h-11 Submit
+function h11Submit(event) {
+    event.preventDefault(); 
+    localStorage.setItem("h11Local",h11Value.val());
+}
+
+h11Btn.on('submit', h11Submit);
+
+// h-12-form
+var h12Value = $('input[name="h-12-value"]');
+var h12Btn = $('#h-12-form'); 
+
+// h-12 Submit
+function h12Submit(event) {
+    event.preventDefault(); 
+    localStorage.setItem("h12Local",h12Value.val());
+}
+
+h12Btn.on('submit', h12Submit);
+
+// h-13-form
+var h13Value = $('input[name="h-13-value"]');
+var h13Btn = $('#h-13-form'); 
+
+// h-13 Submit
+function h13Submit(event) {
+    event.preventDefault();
+    localStorage.setItem("h13Local",h13Value.val());
+}
+
+h13Btn.on('submit', h13Submit);
 
 // h-14-form
 var h14Value = $('input[name="h-14-value"]');
@@ -205,7 +306,7 @@ var h14Btn = $('#h-14-form');
 // h-14 Submit
 function h14Submit(event) {
     event.preventDefault();
-    var h14Value = $('input[name="h-14-value"]'); 
+    // var h14Value = $('input[name="h-14-value"]'); 
     console.log("h14Submit: " + h14Value.val());
     localStorage.setItem("h14Local",h14Value.val());
     // console.log("h14Submit: " + h14Local);
@@ -226,39 +327,102 @@ function h15Submit(event) {
 
 h15Btn.on('submit', h15Submit);
 
+// h-16-form
+var h16Value = $('input[name="h-16-value"]');
+var h16Btn = $('#h-16-form'); 
 
-// /// ----- Local Storage Recall ------
-// var timeBlocks = ['h5','h6', 'h7', 'h8', 'h14'];
-// var recallLi = [];
-// for (var i=0; i<timeBlocks.length; i++) {
-//     recallLi.push(timeBlocks[i] + "Recall"); 
-// }
-// console.log(recallLi); 
-// console.log(typeof recallLi); // object
+// h-16 Submit
+function h16Submit(event) {
+    event.preventDefault();
+    localStorage.setItem("h16Local",h16Value.val());
+}
+
+h16Btn.on('submit', h16Submit);
+
+// h-17-form
+var h17Value = $('input[name="h-17-value"]');
+var h17Btn = $('#h-17-form'); 
+
+// h-17 Submit
+function h17Submit(event) {
+    event.preventDefault();
+    localStorage.setItem("h17Local",h17Value.val());
+}
+
+h17Btn.on('submit', h17Submit);
+
+// h-18-form
+var h18Value = $('input[name="h-18-value"]');
+var h18Btn = $('#h-18-form'); 
+
+// h-18 Submit
+function h18Submit(event) {
+    event.preventDefault();
+    localStorage.setItem("h18Local",h18Value.val());
+}
+
+h18Btn.on('submit', h18Submit);
 
 
+function LocalStorageRecall() {  
+    // h-5 Local Storage Recall
+    var h5Recall = localStorage.getItem("h5Local")
+    $('#h-5-form').children().children().eq(1).attr('value', h5Recall);
 
+    // h-6 Local Storage Recall
+    var h6Recall = localStorage.getItem("h6Local")
+    $('#h-6-form').children().children().eq(1).attr('value', h6Recall);
 
+    // h-7 Local Storage Recall
+    var h7Recall = localStorage.getItem("h7Local")
+    $('#h-7-form').children().children().eq(1).attr('value', h7Recall);
 
-function LocalStorageRecall() {
-   
+    // h-8 Local Storage Recall
+    var h8Recall = localStorage.getItem("h8Local")
+    $('#h-8-form').children().children().eq(1).attr('value', h8Recall);
 
-    // Test Local Storage Recall
-    var testRecall = localStorage.getItem("testLocal")
-    console.log("Test Recall: " + testRecall)
-    console.log(typeof testRecall) // string
-    $('#test-form').children().children().eq(1).attr('value', testRecall);
+    // h-9 Local Storage Recall
+    var h9Recall = localStorage.getItem("h9Local")
+    $('#h-9-form').children().children().eq(1).attr('value', h9Recall);
+
+    // h-10 Local Storage Recall
+    var h10Recall = localStorage.getItem("h10Local")
+    $('#h-10-form').children().children().eq(1).attr('value', h10Recall);
+
+    // h-11 Local Storage Recall
+    var h11Recall = localStorage.getItem("h11Local")
+    $('#h-11-form').children().children().eq(1).attr('value', h11Recall);
+
+    // h-12 Local Storage Recall
+    var h12Recall = localStorage.getItem("h12Local")
+    $('#h-12-form').children().children().eq(1).attr('value', h12Recall);
+
+    // h-13 Local Storage Recall
+    var h13Recall = localStorage.getItem("h13Local")
+    $('#h-13-form').children().children().eq(1).attr('value', h13Recall);
 
     // h-14 Local Storage Recall
     var h14Recall = localStorage.getItem("h14Local")
-    console.log("h14Value Recall: " + h14Recall)
     $('#h-14-form').children().children().eq(1).attr('value', h14Recall);
     // $('#h-14-form').children().children().eq(1).text("value=" + h14Recall); 
 
     // h-15 Local Storage Recall
     var h15Recall = localStorage.getItem("h15Local")
-    console.log("h15Value Recall: " + h15Recall)
+    console.log("h15Value Recall Value: " + h15Recall)
+    console.log("h15Value Recall Type: " + typeof h15Recall)
     $('#h-15-form').children().children().eq(1).attr('value', h15Recall);
+
+    // h-16 Local Storage Recall
+    var h16Recall = localStorage.getItem("h16Local")
+    $('#h-16-form').children().children().eq(1).attr('value', h16Recall);
+ 
+    // h-17 Local Storage Recall
+    var h17Recall = localStorage.getItem("h17Local")
+    $('#h-17-form').children().children().eq(1).attr('value', h17Recall);
+
+    // h-18 Local Storage Recall
+    var h18Recall = localStorage.getItem("h18Local")
+    $('#h-18-form').children().children().eq(1).attr('value', h18Recall);
 
     // BUILD TESTS :: Testing getData at different locations
     // $("#h-15-form") 
@@ -300,3 +464,12 @@ function LocalStorageRecall() {
 //     var storedData[i] = localStorage.getItem("h14local")
 //     $('#test-form').children().children().eq(1).attr('value', storedData[i]);
 // }
+
+// /// ----- Local Storage Recall ------
+// var timeBlocks = ['h5','h6', 'h7', 'h8', 'h14'];
+// var recallLi = [];
+// for (var i=0; i<timeBlocks.length; i++) {
+//     recallLi.push(timeBlocks[i] + "Recall"); 
+// }
+// console.log(recallLi); 
+// console.log(typeof recallLi); // object
