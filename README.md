@@ -4,7 +4,7 @@ Daily Planner
 ## Description
 The tool allows a user to enter tasks for time blocks to plan their day
 
-![screenshot of deployed page](assets/images/third-party-apis-homework-demo.png)
+![screenshot of deployed page](assets/images/time-block.png)
 
 ## Instructions
 1. User enters the task for the time block and clicks on "add"
